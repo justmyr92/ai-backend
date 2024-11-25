@@ -192,7 +192,7 @@ router.get("/get/answers/:record_id", async (req, res) => {
 
         // Fetch data from the table
         const query = `
-          SELECT rv.record_value_id, rv.value, rv.question_id, rv.record_id, rv.campus_id, q.sub_id
+          SELECT rv.record_value_id, rv.value, rv.question_id, rv.record_id, rv.campus_id, q.sub_id, q.section_id
 FROM public.records_values rv
 INNER JOIN public.question q ON rv.question_id = q.question_id
 WHERE rv.record_id = $1;

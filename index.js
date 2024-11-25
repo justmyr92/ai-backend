@@ -9,6 +9,8 @@ const formulaRoutes = require("./routes/formula.routes");
 const recordsRoutes = require("./routes/records.routes");
 const forgotPasswordRoutes = require("./routes/forgot-password.routes");
 
+const notificationRoutes = require("./routes/notification.routes");
+const csdnotificationRoutes = require("./routes/csdNotif.routes");
 require("dotenv").config();
 
 app.use(cors());
@@ -23,6 +25,9 @@ app.use("/api", formulaRoutes);
 app.use("/api", recordsRoutes);
 app.use("/api", forgotPasswordRoutes);
 
+app.use("/api", notificationRoutes);
+app.use("/api", csdnotificationRoutes);
+
 app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
+    console.log(`Server running on port ${process.env.PORT}`);
 });
