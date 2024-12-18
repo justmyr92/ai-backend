@@ -68,6 +68,7 @@ router.post("/add/sections", async (req, res) => {
 
 router.get("/get-records-count-by-status", async (req, res) => {
     try {
+        j;
         const query = `
             SELECT status, COUNT(*) as count
             FROM public.records
