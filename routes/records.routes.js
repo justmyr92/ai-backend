@@ -483,7 +483,7 @@ router.get("/get/records-values-by-sdg_id/:sdg_id/:year", async (req, res) => {
             WHERE 
                 r.status = 3 
                 AND i.sdg_id = $1 
-                AND EXTRACT(YEAR FROM r.date_submitted) = $2; -- Filter by year
+                AND r.year = $2; -- Filter by year
         `;
 
         // Run the query with sdg_id and year parameters
