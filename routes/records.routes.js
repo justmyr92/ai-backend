@@ -521,7 +521,7 @@ JOIN
     public.section s ON q.section_id = s.section_id  -- Join section table
 JOIN 
     public.instrument i ON s.instrument_id = i.instrument_id 
-WHERE r.status = 3 AND EXTRACT(YEAR FROM r.date_submitted) = $1
+WHERE r.status = 3 AND YEAR = $1
 AND rv.campus_id = $2;
         `;
             // Execute the query using the pool and pass the sdg_id parameter
